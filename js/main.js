@@ -34,6 +34,7 @@ $(document).ready(function() {
         event.preventDefault();
         addTweet(personalTweetTextArea.val());
         personalTweetTextArea.val('');
+        personalTweetTextArea.css('height', '2.5em');
         charCount.text('140')
     });
 
