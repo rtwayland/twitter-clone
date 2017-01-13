@@ -27,28 +27,14 @@ $(document).ready(function() {
         }
     });
 
-    //Hover and click tweet
-    $('.tweet').on({
-        mouseenter: function() {
-            event.preventDefault();
-            $(this).find('.tweet-actions').removeClass('initial-hide');
-        },
-        mouseleave: function() {
-            event.preventDefault();
-            $(this).find('.tweet-actions').addClass('initial-hide');
-        }
-      });
 
-      $('.tweet').on('click', function(event) {
-        event.preventDefault();
-        $(this).find('.stats').slideDown('fast');
-        $(this).find('.reply').slideDown('fast');
-      });
 
     // Add tweet to Feed
     tweetButton.on('click', function(event) {
         event.preventDefault();
         addTweet(personalTweetTextArea.val());
+        personalTweetTextArea.val('');
+        charCount.text('140')
     });
 
     function addTweet(text) {
@@ -111,4 +97,22 @@ $(document).ready(function() {
         );
 
     }
+
+    //Hover and click tweet
+    $('.tweet').on({
+        mouseenter: function() {
+            event.preventDefault();
+            $(this).find('.tweet-actions').css('visibility', 'visible');
+        },
+        mouseleave: function() {
+            event.preventDefault();
+            $(this).find('.tweet-actions').css('visibility', 'hidden');
+        }
+    });
+
+    $('.tweet').on('click', function(event) {
+        event.preventDefault();
+        $(this).find('.stats').slideDown('fast');
+        $(this).find('.reply').slideDown('fast');
+    });
 });
