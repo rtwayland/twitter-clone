@@ -1,0 +1,7 @@
+.initial-hide {
+  display: none !important;
+}
+
+.warning-color {
+    color: tomato !important;
+}
