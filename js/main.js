@@ -99,7 +99,7 @@ $(document).ready(function() {
     }
 
     //Hover and click tweet
-    $('.tweet').on({
+    $(document).on({
         mouseenter: function() {
             event.preventDefault();
             $(this).find('.tweet-actions').css('visibility', 'visible');
@@ -108,9 +108,9 @@ $(document).ready(function() {
             event.preventDefault();
             $(this).find('.tweet-actions').css('visibility', 'hidden');
         }
-    });
+    }, '.tweet');
 
-    $('.tweet').on('click', function(event) {
+    $(document).on('click', '.tweet', function(event) {
         event.preventDefault();
         $(this).find('.stats').slideDown('fast');
         $(this).find('.reply').slideDown('fast');
